@@ -1,0 +1,54 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Proof for the Collatz Conjecture (3x + 1 Problem)}
+\author{Amogh Karthik .R, Grade 7}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Introduction}
+According to the Collatz conjecture, the sequence defined by the following transformations is valid for any positive integer \( x \).
+\[
+    f(x) =
+    \begin{cases}
+        \frac{x}{2} & \text{if } x \text{ is even}, \\
+        3x + 1 & \text{if } x \text{ is odd},
+    \end{cases}
+\]
+will always arrive at 1.
+
+\section*{Key Transformations}
+\subsection*{Transformation \( r1 \) (Odd Case)}
+For any odd number \( x \), the transformation \( r1(x) = 3x + 1 \) results in an even number, setting up the next transformation.
+
+\subsection*{Transformation \( r2 \) (Even Case)}
+The transformation \( r2(x) = \frac{x}{2} \) reduces any even number \( x \). We apply \( r2 \) once more if the resultant number remains even. We go to \( r1 \) if it is odd.
+
+\section*{Behavior of the Sequence}
+\subsection*{Alternating Behavior (Odd → Even → Odd)}
+When an odd number is encountered, it is transformed into an even number. From there, \( r2 \) (divide by 2) is applied, which could result in another even number or an odd number. 
+
+\subsection*{Key Insight}
+\begin{itemize}
+    \item \( r2 \) can make an even number odd, which continues the cycle.
+    \item This alternating process continues until the sequence enters the loop \( 4 \to 2 \to 1 \), which repeats indefinitely. 
+    \item when it comes to  \( 2^n \) it becomes 1, THIS IS FROCED DUE TO OTHER RULES (THE BASIC ANSWER TO 3X+1)
+\end{itemize}
+
+\section*{The Cycle \( 4 \to 2 \to 1 \)}
+The sequence gets stuck in the cycle \( 4 \to 2 \to 1 \) once it reaches 4. The important thing to remember is that any number that hits 4 will eventually enter this cycle and stay there forever.
+
+\section*{Conclusion}
+The Collatz Conjecture is true because every number eventually reaches 4 and enters the cycle \( 4 \to 2 \to 1 \) after undergoing the transformations of \( r1 \) and \( r2 \).
+
+\[
+\boxed{\text{Consequently, the conjecture is confirmed when all numbers eventually reach 1.}}
+\]
+
+\end{document}
